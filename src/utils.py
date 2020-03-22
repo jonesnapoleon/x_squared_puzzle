@@ -43,13 +43,12 @@ def printInputArray(array):
         else:
             f.write(str(array[i]))
             f.write(' ')
-    f.write("============\n")
+    f.write("============\n\n")
     f.close()
 
 
 def printArrayWithProgress(array, i, batch):
     inString = str(i)
-    
     gameSize = int(sqrt(len(array) + 1))
 
     print("Matrix after progress", i, 'from batch', batch)
@@ -112,17 +111,15 @@ def desiredOutput(array):
 
 
 def printKurang(totalSigma):
-
-    print("Fungsi Kurang(i)")
-    print("================")
-    print(totalSigma, '\n')
-    print("================")
-
+    print("Sigma Fungsi Kurang + X ->", totalSigma, '\n')
     f = open(FILE_OUTPUT, "a+")
-    f.write("\nFungsi Kurang(i)\n")
-    f.write("================\n")
-    f.write(str(totalSigma)+"\n")
-    f.write("===\n\n")
+    f.write("Sigma Fungsi Kurang + X -> "+str(totalSigma)+"\n\n")
+
+
+def printSatuKurang(satu, number):
+    print("Fungsi Kurang("+str(number)+") ->", satu)
+    f = open(FILE_OUTPUT, "a+")
+    f.write("Fungsi Kurang("+str(number)+") -> "+str(satu)+"\n")
 
 
 def printSiblingCost(arr, ar):
@@ -140,3 +137,8 @@ def printSiblingCost(arr, ar):
         f.write(str(i))
         f.write(" ")
     f.write('\n')
+
+
+def printTime(start, end):
+    print(start)
+    print(end)

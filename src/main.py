@@ -1,8 +1,9 @@
+from utils import printFail, printArrayWithProgress, printSiblingCost, printSuccess, printTime
 from utils import fileToIntArray, setupOutputFile, desiredOutput
-from utils import printFail, printArrayWithProgress, printSiblingCost, printSuccess
 from rule import isReachable, getSiblingIndices, cost, decideNextArray, enque
+import time
 
-
+start_time = time.time()
 setupOutputFile()
 array = fileToIntArray()
 desiredArray = desiredOutput(array)
@@ -32,3 +33,7 @@ else:
         printArrayWithProgress(nextArray, progress, path)
 
     printSuccess(progress)
+
+end_time = time.time() - start_time
+
+printTime(start_time, end_time)

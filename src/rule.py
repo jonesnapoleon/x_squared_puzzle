@@ -1,4 +1,4 @@
-from utils import EMPTY, FILE_OUTPUT, printKurang, desiredOutput
+from utils import EMPTY, FILE_OUTPUT, printKurang, printSatuKurang, desiredOutput
 from math import sqrt
 
 def kurang(array, number):    
@@ -18,11 +18,11 @@ def kurang(array, number):
 def isReachable(array):
     
     x = int(isArsired(array))
-    print(x)
     kurangSigma = 0
 
     for number in array:
         satuSigma = kurang(array, number)
+        printSatuKurang(satuSigma, number)
         kurangSigma += satuSigma
 
     printKurang(kurangSigma + x)
