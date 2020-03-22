@@ -95,11 +95,6 @@ def cost(array, index, path, desiredArray):
 
 
 def decideNextArray(array, siblingIndices, siblingCost):
-
-    # f = open(FILE_OUTPUT, "a+")
-    # for i in siblingCost:
-    #     f.write(str(i)+" ")
-    # f.write("\n")
     emptyIndex = array.index(EMPTY)
     minim = min(siblingCost)
     indexToBeSwapped = siblingIndices[siblingCost.index(minim)]
@@ -130,11 +125,7 @@ def enque(array, siblingIndices, siblingCost, queue, path):
             'prevAction': prevAction,
             'path': path + 1
         }
-        # print(data)
-        # f = open(FILE_OUTPUT, "a+")
-        # for x in data['sequence']:
-        #     f.write(str(x)+" ")
-        # f.write("\n")
+
         if len(queue) == 0:
             queue.append(data)
         elif sequenceExist(queue, sequence):

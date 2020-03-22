@@ -17,7 +17,6 @@ else:
     queue = []
 
     while nextArray != desiredArray:
-    # for i in range(32):
         siblingCost = []
         siblingIndices = getSiblingIndices(nextData)
         progress += 1
@@ -25,9 +24,6 @@ else:
         for index in siblingIndices:
             siblingCost.append(cost(nextArray, index, path, desiredArray))
         
-        # printSiblingCost(siblingIndices, siblingCost)
-        savedPath = path
-
         enque(nextArray, siblingIndices, siblingCost, queue, path)
         nextData = queue.pop(0)
         nextArray = nextData['sequence']

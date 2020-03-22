@@ -104,30 +104,11 @@ def printSuccess(progress):
     f.write("=========\n")
 
 
-def arrayToMatrix(array):
-    length = int(sqrt(len(array) + 1))
-    breadth = length
-    count = 0
-    matrix = []
-    for i in range(length):
-        a = []
-        for j in range(breadth):
-            a.append(array[count])
-            count += 1
-        matrix.append(a)
-    
-    return matrix
-
-
 def desiredOutput(array):
     length = len(array)
     desiredArray = [(i + 1) for i in range(length)]
     desiredArray[length - 1] = 0
     return desiredArray
-
-
-def matrixToArray(matrix):
-    return np.array(matrix).ravel()
 
 
 def printKurang(totalSigma):
