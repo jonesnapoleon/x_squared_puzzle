@@ -1,7 +1,7 @@
 from math import sqrt
 import numpy as np
 
-FILE_NAME = "file/input2.txt"
+FILE_NAME = "file/input.txt"
 EMPTY = 0
 FILE_OUTPUT = FILE_NAME.replace("in", "out")
 
@@ -9,7 +9,7 @@ FILE_OUTPUT = FILE_NAME.replace("in", "out")
 def setupOutputFile():
     f = open(FILE_OUTPUT, "w")
     f.write("X-Squared Puzzle Game by Jones Napoleon\n")
-    f.write("=========-------=======================\n")
+    f.write("=======================================\n")
 
 
 def fileToIntArray():
@@ -30,7 +30,7 @@ def printInputArray(array):
             print(array[i])
         else:
             print(array[i], end=' ')
-    print("============\n")
+    print("======\n")
     
     f = open(FILE_OUTPUT, "a+")
 
@@ -47,24 +47,25 @@ def printInputArray(array):
     f.close()
 
 
-def printArrayWithProgress(array, i):
+def printArrayWithProgress(array, i, batch):
+    inString = str(i)
     
     gameSize = int(sqrt(len(array) + 1))
 
-    print("\nMatrix after progress-", i)
-    print("============")
+    print("Matrix after progress", i, 'from batch', batch)
+    print("======================================")
     for i in range(len(array)):
         if((i+1) % gameSize == 0):
             print(array[i])
         else:
             print(array[i], end=' ')
-    print("============\n")
-    
+    print("=====\n")
+
     f = open(FILE_OUTPUT, "a+")
 
-    f.write("\nMatrix after progress-")
-    f.write(str(i)+"\n")
-    f.write("============\n")
+    f.write("\nMatrix after progress ")
+    f.write(inString+" from batch "+str(batch)+"\n")
+    f.write("====================================\n")
     for i in range(len(array)):
         if((i+1) % gameSize == 0):
             f.write(str(array[i]))
@@ -72,20 +73,35 @@ def printArrayWithProgress(array, i):
         else:
             f.write(str(array[i]))
             f.write(' ')
-    f.write("============\n")
+    f.write("=====\n")
     f.close()
 
 
 def printFail():
     print("Decision")
     print("=========")
-    print("This puzzle cannot be solved!\n")
-
+    print("This puzzle cannot be solved!")
+    print("=========\n")
+    
     f = open(FILE_OUTPUT, "a+")
 
     f.write("\nDecision\n")
     f.write("=========\n")
     f.write("This puzzle cannot be solved!\n")
+    f.write("=========\n")
+
+
+def printSuccess(progress):
+    print("Decision")
+    print("=========")
+    print("This puzzle is solved after progress "+str(progress)+"!")
+    print("=========\n")
+
+    f = open(FILE_OUTPUT, "a+")
+    f.write("\nDecision\n")
+    f.write("=========\n")
+    f.write("This puzzle is solved after progress "+str(progress)+"!\n")
+    f.write("=========\n")
 
 
 def arrayToMatrix(array):
@@ -103,6 +119,13 @@ def arrayToMatrix(array):
     return matrix
 
 
+def desiredOutput(array):
+    length = len(array)
+    desiredArray = [(i + 1) for i in range(length)]
+    desiredArray[length - 1] = 0
+    return desiredArray
+
+
 def matrixToArray(matrix):
     return np.array(matrix).ravel()
 
@@ -112,9 +135,27 @@ def printKurang(totalSigma):
     print("Fungsi Kurang(i)")
     print("================")
     print(totalSigma, '\n')
+    print("================")
 
     f = open(FILE_OUTPUT, "a+")
     f.write("\nFungsi Kurang(i)\n")
     f.write("================\n")
-    f.write(str(totalSigma))
+    f.write(str(totalSigma)+"\n")
+    f.write("===\n\n")
+
+
+def printSiblingCost(arr, ar):
+    f = open(FILE_OUTPUT, "a+")
+    f.write("\nSibling index\n")
+    f.write("================\n")
+    for i in arr:
+        f.write(str(i))
+        f.write(" ")
+    f.write('\n')
+
+    f.write("Sibling cost\n")
+    f.write("================\n")
+    for i in ar:
+        f.write(str(i))
+        f.write(" ")
     f.write('\n')
