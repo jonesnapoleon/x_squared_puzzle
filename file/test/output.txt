@@ -1,0 +1,39 @@
+X-Squared Puzzle Game by Jones Napoleon
+=======================================
+
+Input matrix
+==============
+15 19 0 12 3
+23 9 10 5 11
+13 21 14 20 18
+22 24 16 4 8
+17 7 2 6 1
+==============
+
+Fungsi Kurang(15) -> 14
+Fungsi Kurang(19) -> 17
+Fungsi Kurang(0) -> 22
+Fungsi Kurang(12) -> 11
+Fungsi Kurang(3) -> 2
+Fungsi Kurang(23) -> 18
+Fungsi Kurang(9) -> 7
+Fungsi Kurang(10) -> 7
+Fungsi Kurang(5) -> 3
+Fungsi Kurang(11) -> 6
+Fungsi Kurang(13) -> 6
+Fungsi Kurang(21) -> 11
+Fungsi Kurang(14) -> 6
+Fungsi Kurang(20) -> 9
+Fungsi Kurang(18) -> 8
+Fungsi Kurang(22) -> 8
+Fungsi Kurang(24) -> 8
+Fungsi Kurang(16) -> 6
+Fungsi Kurang(4) -> 2
+Fungsi Kurang(8) -> 4
+Fungsi Kurang(17) -> 4
+Fungsi Kurang(7) -> 3
+Fungsi Kurang(2) -> 1
+Fungsi Kurang(6) -> 1
+Fungsi Kurang(1) -> 0
+Sigma Fungsi Kurang + X -> 184
+

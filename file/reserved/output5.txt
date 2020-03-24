@@ -1,0 +1,40 @@
+X-Squared Puzzle Game by Jones Napoleon
+=======================================
+
+Input matrix
+==============
+7 15 12 11
+3 9 5 10
+14 0 8 2
+4 13 1 6
+==============
+
+Fungsi Kurang(7) -> 6
+Fungsi Kurang(15) -> 13
+Fungsi Kurang(12) -> 10
+Fungsi Kurang(11) -> 9
+Fungsi Kurang(3) -> 2
+Fungsi Kurang(9) -> 6
+Fungsi Kurang(5) -> 3
+Fungsi Kurang(10) -> 5
+Fungsi Kurang(14) -> 6
+Fungsi Kurang(0) -> 6
+Fungsi Kurang(8) -> 4
+Fungsi Kurang(2) -> 1
+Fungsi Kurang(4) -> 1
+Fungsi Kurang(13) -> 2
+Fungsi Kurang(1) -> 0
+Fungsi Kurang(6) -> 0
+Sigma Fungsi Kurang + X -> 75
+
+
+Decision
+=========
+This puzzle cannot be solved!
+=========
+
+Execution time
+==============
+0.2408900000009453 seconds
+==============
+
