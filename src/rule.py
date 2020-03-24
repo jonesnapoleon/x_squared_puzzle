@@ -6,7 +6,7 @@ import heapq
 def kurang(array, number):    
     index = array.index(number)
 
-    if number != 0:
+    if number != EMPTY:
         count = 0        
         for i in range(index + 1, len(array)):
             if array[i] < number and array[i] != EMPTY:
@@ -18,7 +18,7 @@ def kurang(array, number):
 
 
 def isReachable(array):
-    
+    print(array)
     x = int(isArsired(array))
     kurangSigma = 0
 

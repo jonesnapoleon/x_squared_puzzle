@@ -3,7 +3,9 @@ import numpy as np
 import datetime
 import time
 
+FILE_REPRESENTATIVE_EMPTY = '0'
 EMPTY = 0
+EMPTY_IN_STRING = str(EMPTY)
 FOLDER = "file/" + "test"
 FILE_NAME = FOLDER + "/input.txt"
 FILE_OUTPUT = FILE_NAME.replace("in", "out")
@@ -18,7 +20,8 @@ def setupOutputFile():
 def fileToIntArray():
     print(FILE_NAME)
     f = open(FILE_NAME, "r")
-    array = f.read().replace('\n', " ").split(" ")
+    array = f.read().replace('\n', " ").replace(FILE_REPRESENTATIVE_EMPTY, EMPTY_IN_STRING).split(" ")
+    print(array)
     array = list(map(lambda x: int(x), array))
     printInputArray(array)
     return array
