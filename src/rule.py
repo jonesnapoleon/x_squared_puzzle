@@ -1,5 +1,7 @@
-from utils import EMPTY, FILE_OUTPUT, printKurang, printSatuKurang, desiredOutput
+from utils import EMPTY, FILE_OUTPUT, printKurang, printSatuKurang, desiredOutput, printArrayWithProgress
 from math import sqrt
+import heapq
+
 
 def kurang(array, number):    
     index = array.index(number)
@@ -104,10 +106,11 @@ def decideNextArray(array, siblingIndices, siblingCost):
     array[indexToBeSwapped] = temp
 
 
-def enque(array, siblingIndices, siblingCost, queue, path):
+def enque(nextData, siblingIndices, siblingCost, queue, path):
+    array = nextData['sequence']
     emptyIndex = array.index(EMPTY)
     gameSize = int(sqrt(len(array) + 1))
-
+    
     for i in range(len(siblingIndices)):
         sequence = swapped(array, emptyIndex, siblingIndices[i])
         if(siblingIndices[i] - emptyIndex == gameSize):
@@ -118,25 +121,24 @@ def enque(array, siblingIndices, siblingCost, queue, path):
             prevAction = "RIGHT"
         if(siblingIndices[i] - emptyIndex == -1):
             prevAction = "LEFT"
-        
+
         data = {
             'sequence': sequence,
             'cost': siblingCost[i],
             'prevAction': prevAction,
-            'path': path + 1
+            'path': path + 1,
+            'walkThrough': nextData['walkThrough'] + '-' + prevAction
         }
 
-        if len(queue) == 0:
-            queue.append(data)
-        elif sequenceExist(queue, sequence):
+        if sequenceExist(queue, sequence):
             continue
         else:
-            for j in range(len(queue)):                
-                if j == len(queue) - 1:
-                    queue.append(data)                    
-                elif siblingCost[i] < queue[j]['cost']:
-                    queue.insert(j, data)
-                    break
+            queue.append(data)
+    queue.sort(key=doc)
+
+
+def doc(e):
+    return e['cost']
 
 
 def sequenceExist(queue, sequence):
@@ -144,3 +146,24 @@ def sequenceExist(queue, sequence):
         if val['sequence'] == sequence:
             return True
     return False
+
+
+def printArrayWithWalkthrough(array, walkThrough):
+    steps = walkThrough.split('-')[1:]
+    gameSize = int(sqrt(len(array) + 1))
+    nextArray = [a for a in array]
+    move = 0
+
+    for step in steps:
+        emptyIndex = nextArray.index(EMPTY)
+        move += 1
+        if step == 'LEFT':
+            index = emptyIndex - 1
+        elif step == 'RIGHT':
+            index = emptyIndex + 1
+        elif step == 'UP':
+            index = emptyIndex - gameSize
+        elif step == 'DOWN':
+            index = emptyIndex + gameSize
+        nextArray = swapped(nextArray, emptyIndex, index)
+        printArrayWithProgress(nextArray, move, step)
