@@ -65,6 +65,6 @@ This puzzle is solved after raising 3 nodes!
 
 Execution time
 ==============
-0.3703570000070613 seconds
+0.06721900000411551 seconds
 ==============
 

@@ -5,8 +5,8 @@ import time
 FILE_REPRESENTATIVE_EMPTY = '0'
 EMPTY = 0
 EMPTY_IN_STRING = str(EMPTY)
-FOLDER = "file/" + "test"
-FILE_NAME = FOLDER + "/input.txt"
+FOLDER = "file/"
+FILE_NAME = FOLDER + "input.txt"
 FILE_OUTPUT = FILE_NAME.replace("in", "out")
 
 
