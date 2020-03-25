@@ -1,7 +1,7 @@
 # X-Squared Puzzle Game
 
 ## Prerequisite
-**Python**
+> Python
 
 ## How to run
 Edit a file at /file/input.txt, followed by running at console
