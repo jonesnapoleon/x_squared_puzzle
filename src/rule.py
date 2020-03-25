@@ -18,7 +18,6 @@ def kurang(array, number):
 
 
 def isReachable(array):
-    print(array)
     x = int(isArsired(array))
     kurangSigma = 0
 
