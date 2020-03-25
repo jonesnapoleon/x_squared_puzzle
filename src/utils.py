@@ -17,10 +17,8 @@ def setupOutputFile():
 
 
 def fileToIntArray():
-    print(FILE_NAME)
     f = open(FILE_NAME, "r")
     array = f.read().replace('\n', " ").replace(FILE_REPRESENTATIVE_EMPTY, EMPTY_IN_STRING).split(" ")
-    print(array)
     array = list(map(lambda x: int(x), array))
     printInputArray(array)
     return array

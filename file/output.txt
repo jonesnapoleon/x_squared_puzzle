@@ -4,43 +4,193 @@ X-Squared Puzzle Game by Jones Napoleon
 Input matrix
 ==============
 1 2 3 4
-5 6 7 8
-9 10 11 12
-0 13 14 15
+10 11 6 8
+5 14 0 7
+9 13 15 12
 ==============
 
 Fungsi Kurang(1) -> 0
 Fungsi Kurang(2) -> 0
 Fungsi Kurang(3) -> 0
 Fungsi Kurang(4) -> 0
+Fungsi Kurang(10) -> 5
+Fungsi Kurang(11) -> 5
+Fungsi Kurang(6) -> 1
+Fungsi Kurang(8) -> 2
 Fungsi Kurang(5) -> 0
-Fungsi Kurang(6) -> 0
+Fungsi Kurang(14) -> 4
+Fungsi Kurang(0) -> 5
 Fungsi Kurang(7) -> 0
-Fungsi Kurang(8) -> 0
 Fungsi Kurang(9) -> 0
-Fungsi Kurang(10) -> 0
-Fungsi Kurang(11) -> 0
+Fungsi Kurang(13) -> 1
+Fungsi Kurang(15) -> 1
 Fungsi Kurang(12) -> 0
-Fungsi Kurang(0) -> 3
-Fungsi Kurang(13) -> 0
-Fungsi Kurang(14) -> 0
-Fungsi Kurang(15) -> 0
-Sigma Fungsi Kurang + X -> 4
+Sigma Fungsi Kurang + X -> 24
 
 
 Matrix after progress 1
 ========================
-Last move: RIGHT
+Last move: LEFT
 ========================
 1 2 3 4
-5 6 7 8
-9 10 11 12
-13 0 14 15
+10 11 6 8
+5 0 14 7
+9 13 15 12
 ==============
 
 Matrix after progress 2
 ========================
+Last move: UP
+========================
+1 2 3 4
+10 0 6 8
+5 11 14 7
+9 13 15 12
+==============
+
+Matrix after progress 3
+========================
+Last move: LEFT
+========================
+1 2 3 4
+0 10 6 8
+5 11 14 7
+9 13 15 12
+==============
+
+Matrix after progress 4
+========================
+Last move: DOWN
+========================
+1 2 3 4
+5 10 6 8
+0 11 14 7
+9 13 15 12
+==============
+
+Matrix after progress 5
+========================
+Last move: DOWN
+========================
+1 2 3 4
+5 10 6 8
+9 11 14 7
+0 13 15 12
+==============
+
+Matrix after progress 6
+========================
 Last move: RIGHT
+========================
+1 2 3 4
+5 10 6 8
+9 11 14 7
+13 0 15 12
+==============
+
+Matrix after progress 7
+========================
+Last move: UP
+========================
+1 2 3 4
+5 10 6 8
+9 0 14 7
+13 11 15 12
+==============
+
+Matrix after progress 8
+========================
+Last move: RIGHT
+========================
+1 2 3 4
+5 10 6 8
+9 14 0 7
+13 11 15 12
+==============
+
+Matrix after progress 9
+========================
+Last move: RIGHT
+========================
+1 2 3 4
+5 10 6 8
+9 14 7 0
+13 11 15 12
+==============
+
+Matrix after progress 10
+========================
+Last move: DOWN
+========================
+1 2 3 4
+5 10 6 8
+9 14 7 12
+13 11 15 0
+==============
+
+Matrix after progress 11
+========================
+Last move: LEFT
+========================
+1 2 3 4
+5 10 6 8
+9 14 7 12
+13 11 0 15
+==============
+
+Matrix after progress 12
+========================
+Last move: LEFT
+========================
+1 2 3 4
+5 10 6 8
+9 14 7 12
+13 0 11 15
+==============
+
+Matrix after progress 13
+========================
+Last move: UP
+========================
+1 2 3 4
+5 10 6 8
+9 0 7 12
+13 14 11 15
+==============
+
+Matrix after progress 14
+========================
+Last move: UP
+========================
+1 2 3 4
+5 0 6 8
+9 10 7 12
+13 14 11 15
+==============
+
+Matrix after progress 15
+========================
+Last move: RIGHT
+========================
+1 2 3 4
+5 6 0 8
+9 10 7 12
+13 14 11 15
+==============
+
+Matrix after progress 16
+========================
+Last move: DOWN
+========================
+1 2 3 4
+5 6 7 8
+9 10 0 12
+13 14 11 15
+==============
+
+Matrix after progress 17
+========================
+Last move: DOWN
 ========================
 1 2 3 4
 5 6 7 8
@@ -48,7 +198,7 @@ Last move: RIGHT
 13 14 0 15
 ==============
 
-Matrix after progress 3
+Matrix after progress 18
 ========================
 Last move: RIGHT
 ========================
@@ -60,11 +210,11 @@ Last move: RIGHT
 
 Decision
 =========
-This puzzle is solved after raising 3 nodes!
+This puzzle is solved after raising 2494 nodes!
 =========
 
 Execution time
 ==============
-0.06721900000411551 seconds
+0.9359919999988051 seconds
 ==============
 

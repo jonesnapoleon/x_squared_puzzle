@@ -3,26 +3,27 @@ from math import sqrt
 import heapq
 
 
-def kurang(array, number):    
+def kurang(array, number, side):    
     index = array.index(number)
 
     if number != EMPTY:
-        count = 0        
+        count = 0
         for i in range(index + 1, len(array)):
             if array[i] < number and array[i] != EMPTY:
                 count += 1
         return count
 
     else:
-        return len(array) - index - 1
+        return len(array) - index - 1 if side % 2 == 0 else 0
 
 
 def isReachable(array):
-    x = int(isArsired(array))
+    gameSize = int(sqrt(len(array) + 1))
+    x = int(isArsired(array)) if gameSize % 2 == 0 else 0
     kurangSigma = 0
 
     for number in array:
-        satuSigma = kurang(array, number)
+        satuSigma = kurang(array, number, gameSize)
         printSatuKurang(satuSigma, number)
         kurangSigma += satuSigma
 
